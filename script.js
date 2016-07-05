@@ -81,7 +81,7 @@ function generateTable(filter_data){
 }
 function generateTableRow(key){
   var item = database[key];
-  return '<a href="/product?' + item['key'] + '">' + item['Name'] + '</a></td><td>' + item['GPU Name'] + '</td><td>' + item['Launch Price'];
+  return '<a href="/GPU-Analyzer/product?' + item['key'] + '">' + item['Name'] + '</a></td><td>' + item['GPU Name'] + '</td><td>' + item['Launch Price'];
 }
 function generateModelFilters(models){
   var textToInsert = [];
