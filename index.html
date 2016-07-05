@@ -1,0 +1,85 @@
+
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <!--script(src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js')-->
+    <!--script(src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js')-->
+    <link rel="stylesheet prefetch" href="https://cdn.rawgit.com/Dogfalo/materialize/master/dist/css/materialize.min.css"/>
+    <!--link(rel='stylesheet', href='https://cdn.datatables.net/1.10.12/css/dataTables.material.min.css')-->
+    <link rel="stylesheet" href="style.min.css"/>
+    <link rel="stylesheet" href="product.min.css"/>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <nav class="blue">
+      <div class="navbar-fixed">
+        <div class="nav-wrapper center-align"><a href="index.html" class="page-title">GPU Analyzer</a></div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m3 l3">
+          <div class="card">
+            <div class="card-content">
+              <h4>Filters</h4>
+              <div><span>
+                  <div data-id="p" class="title arrow-down">Price</div></span>
+                <ul id="p-list">
+                  <li>
+                    <input type="checkbox" id="p_all" checked="checked" class="p_filter"/>
+                    <label for="p_all">All</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="p_1" p-min="0" p-max="100" class="p_filter"/>
+                    <label for="p_1">Less than $100</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="p_2" p-min="100" p-max="250" class="p_filter"/>
+                    <label for="p_2">$100 - $250</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="p_3" p-min="250" p-max="500" class="p_filter"/>
+                    <label for="p_3">$250 - $500</label>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="p_4" p-min="500" p-max="750" class="p_filter"/>
+                    <label for="p_4">$500 - $750</label>
+                  </li>
+                </ul>
+              </div>
+              <div id="model-filter-div">
+                <div data-id="m" class="title arrow-down">Model</div>
+                <ul id="m-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m9 l9">
+          <div class="card">
+            <div class="card-content">
+              <div class="searchbar">
+                <input type="text" id="searchFilter" placeholder="Search"/>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-content">
+              <table id="main-table">
+                <thead>
+                  <tr>
+                    <!--th-->
+                    <th data-type="Name" data-dir="asc" class="custom-header">Name</th>
+                    <th data-type="GPU Name" data-dir="asc" class="custom-header">Model</th>
+                    <th data-type="Launch Price" data-dir="asc" class="custom-header">Price</th>
+                    <!--th-->
+                  </tr>
+                </thead>
+                <tbody id="fbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
